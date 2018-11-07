@@ -750,3 +750,7 @@
 	path = extensions/CentralNotice
 	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/CentralNotice
 	branch = wmf_deploy
+[submodule "extensions/GrowthExperiments"]
+	path = extensions/GrowthExperiments
+	url = https://gerrit.wikimedia.org/r/mediawiki/extensions/GrowthExperiments
+	branch = wmf/1.33.0-wmf.2
