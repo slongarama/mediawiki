@@ -229,6 +229,10 @@ class MemcachedPeclBagOStuff extends MemcachedBagOStuff {
 					$server = $this->client->getServerByKey( $key );
 					$logCtx['memcached-server'] = "{$server['host']}:{$server['port']}";
 					$logCtx['memcached-key'] = $key;
+					// Get a trace for debugging T209429
+					if ( $msg === 'A BAD KEY WAS PROVIDED/CHARACTERS OUT OF RANGE' ) {
+						$logCtx['exception'] = new Exception( $msg );
+					}
 					$msg = "Memcached error for key \"{memcached-key}\" on server \"{memcached-server}\": $msg";
 				} else {
 					$msg = "Memcached error: $msg";
